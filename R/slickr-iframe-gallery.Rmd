@@ -33,11 +33,12 @@ s = slickR::slickR(
     dots  = TRUE
   )
 
-htmlwidgets::saveWidget(s, "slickr.html", selfcontained = FALSE, libdir = "lib")
-
 ```
 
 ```{r render, echo = FALSE}
+## https://plotly-r.com/saving.html
+htmlwidgets::saveWidget(s, "slickr.html", selfcontained = FALSE, libdir = "lib")
+
 htmltools::tags$iframe(
   src = "slickr.html", 
   scrolling = "no", 
