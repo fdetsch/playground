@@ -1,0 +1,38 @@
+\documentclass[a4paper]{article}
+\usepackage{hyperref}
+\usepackage{array}
+\begin{document}
+
+I just found out how to create LaTeX tables with centred columns AND fixed column widths including text wrapping based on a somewhat aged post on \href{https://tex.stackexchange.com/questions/5017/center-column-with-specifying-width-in-table-tabular-enviroment}{TEX StackExchange}. Fixed column widths of centered columns can easily be achieved with the help of \textbackslash{centering} from the \textbf{array} package. Here's what I came up with.
+
+<<code, eval = FALSE>>=
+\documentclass{article}
+\usepackage{array}
+\begin{document}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{4cm} | >{\centering\arraybackslash}p{2cm}}
+\hline
+Here's some text. &
+Here's some wrapped text. \\
+\hline
+
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}
+@
+
+\begin{table}[!htbp]
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{4cm} | >{\centering\arraybackslash}p{2cm}}
+\hline
+Here's some text. &
+Here's some wrapped text. \\
+\hline
+
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}
